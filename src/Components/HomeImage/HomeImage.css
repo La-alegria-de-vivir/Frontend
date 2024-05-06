@@ -1,0 +1,10 @@
+.image-home {
+    background-image: url('../../assets/home.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+  }
