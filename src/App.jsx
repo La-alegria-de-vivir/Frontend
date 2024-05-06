@@ -1,14 +1,21 @@
-import { useState } from 'react'
-import HomeImage from './Components/HomeImage/HomeImage.jsx'
-import Menu from './Components/Menu/Menu.jsx'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Reservation from './Pages/Reservation/Reservation.jsx';
+import Navbar from './Components/Navbar/Navbar.jsx';
+import Footer from './Components/Footer/Footer.jsx';
+import Home from './Pages/Home/Home.jsx';
+
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
-    <main>
-     <HomeImage/>
-     <Menu/>
-    </main>
+      <BrowserRouter>
+        <Navbar/>
+      <Routes>
+        <Route path='/reservation' element={<Reservation/>}/>
+        <Route path='/' element={<Home/>}/>
+      </Routes>
+      <Footer/>
+      </BrowserRouter>
   )
 }
 
