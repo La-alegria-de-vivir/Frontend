@@ -1,0 +1,14 @@
+.section-menu{
+    display: flex;
+    flex-direction: row;
+background-color: #FEFFCE;
+}
+.section-menu aside{
+    width:50%;
+}
+
+.section-menu figure {
+background-image: url('../../assets/sala.jpg') ;
+background-size: cover;
+background-position: center;
+}
