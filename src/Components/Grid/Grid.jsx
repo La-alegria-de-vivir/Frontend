@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Pagination from '../Pagination/Pagination';
 
-// Asíncronamente carga todas las imágenes de un directorio
-async function loadImages() {
-  const context = import.meta.globEager('../assets/images/*.jpg');
-  return Object.values(context).map(mod => mod.default);
+
+const loadImages = () => {
+
+  const imageNames = ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg', 'image5.jpg', 'image6.jpg', 'image7.jpg', 'image8.jpg'];
+
+  return imageNames.map(name => `/images/${name}`);
 }
 
 const Grid = () => {
@@ -13,7 +15,8 @@ const Grid = () => {
   const [imagesPerPage] = useState(4);
 
   useEffect(() => {
-    loadImages().then(images => setImages(images));
+    const fetchedImages = loadImages();
+    setImages(fetchedImages);
   }, []);
 
   const indexOfLastImage = currentPage * imagesPerPage;
