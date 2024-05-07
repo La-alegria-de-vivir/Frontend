@@ -3,7 +3,7 @@ import Reservation from './Pages/Reservation/Reservation.jsx';
 import Navbar from './Components/Navbar/Navbar.jsx';
 import Footer from './Components/Footer/Footer.jsx';
 import Home from './Pages/Home/Home.jsx';
-import Grid from './Components/Grid/Grid.jsx';
+import NotFound from './Pages/NotFound/NotFound.jsx'
 
 function App() {
   
@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path='/reservation' element={<Reservation/>}/>
         <Route path='/' element={<Home/>}/>
-       
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer/>
       </BrowserRouter>

@@ -1,0 +1,53 @@
+.section-AboutUs{
+  display: flex;
+  flex-direction: row;
+}
+.section-AboutUs aside{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 70vh;
+}
+
+.figure1-aboutus{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+height: 40vh;
+  padding: 2rem;
+}
+.figure1-aboutus-div-1{
+  width: 12rem;
+
+}
+.figure1-aboutus-div-2{
+  width: 12rem;
+}
+.figure2-aboutus{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 30vh;
+  padding: 2rem;
+}
+.figure2-aboutus img{
+  width: 12rem;
+}
+
+.section-AboutUs article{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem;
+  width: 50%;
+}
+.section-AboutUs article img{
+  border-radius: 50%;
+  width: 5rem;
+}
+
+@media screen and (max-width:700px){
+  .section-AboutUs{
+    flex-direction: column;
+  }
+}
