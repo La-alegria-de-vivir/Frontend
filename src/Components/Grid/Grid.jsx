@@ -4,7 +4,7 @@ import Pagination from '../Pagination/Pagination';
 
 const loadImages = () => {
 
-  const imageNames = ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg', 'image5.jpg', 'image6.jpg', 'image7.jpg', 'image8.jpg'];
+  const imageNames = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg'];
 
   return imageNames.map(name => `/images/${name}`);
 }
@@ -26,8 +26,8 @@ const Grid = () => {
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   return (
-    <div className="container mx-auto px-4">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div className="container mx-auto px-4 ">
+      <div className="grid grid-cols-2 md:grid-cols-2 gap-4 mt-4 ml-20">
         {currentImages.map((image, index) => (
           <div key={index} className="max-w-sm rounded overflow-hidden shadow-lg">
             <img src={image} alt={`Imagen ${index + 1}`} className="w-full" />
