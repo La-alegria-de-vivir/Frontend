@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import './Menu.css'
 
 const Menu = () => {
@@ -27,7 +26,6 @@ const Menu = () => {
       </table>  
       </aside>
       <figure>
-
       </figure>
       
     </section>
