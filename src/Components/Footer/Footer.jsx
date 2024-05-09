@@ -8,7 +8,7 @@ import { IoNewspaper } from "react-icons/io5";
 function Footer() {
   return (
     <div className=''>
-<footer className="bg-[#8C1111] text-white">
+<footer className="bg-[#AEAF50] text-white">
     <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex ">
           <div className="mb-6 md:mb-0">
