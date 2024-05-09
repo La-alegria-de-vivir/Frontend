@@ -14,8 +14,10 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage }) => {
           <li key={number} className="list-none">
             <button
               onClick={() => paginate(number)}
-              className={`px-4 py-2 text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-400 ${
-                currentPage === number ? 'bg-blue-700' : ''
+              className={`px-4 py-2 text-white font-bold rounded transition-colors duration-300 transform ${
+                currentPage === number
+                  ? 'bg-gradient-to-r from-[#AEAF50] to-[#F3C14C]'
+                  : 'bg-gradient-to-r from-[#AEAF50] to-[#F3C14C] hover:from-[#adaf50bd] hover:to-[#F3C14C]'
               }`}
             >
               {number}
