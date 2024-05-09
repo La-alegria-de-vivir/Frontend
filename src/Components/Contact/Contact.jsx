@@ -95,7 +95,7 @@ const Contact = () => {
           </label>
           <button
             type="submit"
-            className="bg-gradient-to-r from-yellow-300 to-red-300 hover:from-yellow-300 hover:to-red-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
+            className="bg-gradient-to-r from-[#AEAF50] to-[#F3C14C] hover:from-[#adaf50bd] hover:to-[#F3C14C] text-white font-bold py-2 px-4 rounded transition-colors duration-300"
             >
             Enviar
           </button>
