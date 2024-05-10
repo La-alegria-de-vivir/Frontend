@@ -1,0 +1,132 @@
+.section-AboutUs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 40vh;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.section-AboutUs-div1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 5vh;
+  align-items: center;
+}
+
+.section-AboutUs-div1 h2 {
+  font-size: 30px;
+}
+
+.section-AboutUs-div1 hr {
+  margin-right: 0;
+
+}
+
+.hr1 {
+  width: 50%;
+  margin-left: auto;
+  height: 2px;
+  background-color: #0A95D0;
+  margin-bottom: 0.5rem;
+}
+
+.hr2 {
+  margin-left: auto;
+  width: 55%;
+  height: 2px;
+  background-color: #BBBC4E;
+}
+
+.section-AboutUs-div2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 20vh;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.section-AboutUs-div2 aside {
+  display: flex;
+  flex-direction: column;
+}
+
+.figure1-aboutus {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  min-height: 40vh;
+  padding: 2rem;
+}
+
+.figure1-aboutus-div-1,
+.figure1-aboutus-div-2 {
+  min-width: 12rem;
+}
+
+.figure1-aboutus-div-1 div,
+.figure1-aboutus-div-2,.figure2-aboutus div {
+  background-color: #BBBC4E;
+  padding: 0.5rem;
+  margin: 1rem;
+  width: 13rem;
+  display: flex;
+  justify-content: center;
+}
+.figure2-aboutus{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.section-AboutUs-div2 aside img {
+  width: 12rem;
+  background-color: #BBBC4E;
+  padding: 0.5rem;
+  margin: 1rem;
+ 
+}
+
+.section-AboutUs-div2 aside img {
+  background-color: #FFDB58;
+  padding: 0.5rem;
+   height: auto;
+}
+
+.section-AboutUs-div2 article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem;
+  width: 50%;
+}
+
+.section-AboutUs-div2 article p {
+  text-align: justify;
+  font-size: 15px;
+  margin-bottom: 1.15rem;
+}
+
+.section-AboutUs-div2 article img {
+  border-radius: 50%;
+  width: 5rem;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 700px) {
+  .section-AboutUs-div2 {
+    flex-direction: column;
+  }
+
+  .section-AboutUs-div2 aside {
+    width: 100%;
+    height: auto;
+  }
+
+  .section-AboutUs-div2 article {
+    width: 100%;
+    order: 2;
+  }
+}
