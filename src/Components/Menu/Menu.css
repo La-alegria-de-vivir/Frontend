@@ -53,4 +53,20 @@ font-size: 20px;
         padding-right: 1rem;
     font-size: 12px;
     }
+    .section-menu div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section-menu div aside {
+        width: 100%;
+        align-items: center;
+        padding:4rem;
+    }
+    
+    .section-menu div figure {
+        min-height: 40vh;
+        width: 100%;
+    }
+
 }
