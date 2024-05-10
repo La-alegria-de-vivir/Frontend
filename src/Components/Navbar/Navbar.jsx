@@ -53,18 +53,18 @@ function Navbar() {
             </button>
             {/* Nav Links */}
             <ul className={`${menuOpen ? 'flex flex-col w-screen items-center space-y-4' : 'hidden'} md:hidden`}>
-              <li><a className="hover:text-green-400" href="/">Inicio</a></li>
-              <li><a className="hover:text-green-400" href="#">Carta</a></li>
-              <li><a className="hover:text-green-400" href="/reservation">Reserva</a></li>
-              <li><a className="hover:text-green-400" href="#">Sobre Nosotros</a></li>
-              <li><a className="hover:text-green-400" href="#">Contacto</a></li>
+              <li><a className="hover:text-[#BBBC4E]" href="/">Inicio</a></li>
+              <li><a className="hover:text-[#BBBC4E]" href="#">Carta</a></li>
+              <li><a className="hover:text-[#BBBC4E]" href="/reservation">Reserva</a></li>
+              <li><a className="hover:text-[#BBBC4E]" href="#">Sobre Nosotros</a></li>
+              <li><a className="hover:text-[#BBBC4E]" href="#">Contacto</a></li>
             </ul>
             <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-              <li><a className="hover:text-green-400" href="/">Inicio</a></li>
-              <li><a className="hover:text-green-400" href="#">Carta</a></li>
-              <li><a className="hover:text-green-400" href="/reservation">Reserva</a></li>
-              <li><a className="hover:text-green-400" href="#">Sobre Nosotros</a></li>
-              <li><a className="hover:text-green-400" href="#">Contacto</a></li>
+              <li><a className="hover:text-[#BBBC4E]" href="/">Inicio</a></li>
+              <li><a className="hover:text-[#BBBC4E]" href="#">Carta</a></li>
+              <li><a className="hover:text-[#BBBC4E]" href="/reservation">Reserva</a></li>
+              <li><a className="hover:text-[#BBBC4E]" href="#">Sobre Nosotros</a></li>
+              <li><a className="hover:text-[#BBBC4E]" href="#">Contacto</a></li>
             </ul>
           </div>
         </nav>

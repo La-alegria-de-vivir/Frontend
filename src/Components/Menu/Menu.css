@@ -1,18 +1,72 @@
-.section-menu{
+.section-menu {
     display: flex;
     flex-direction: column;
-
+    align-items: center;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
 }
-.section-menu aside{
-    width:100%;
+
+.section-menu h2 {
+    font-size: 70px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.section-menu div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.section-menu div aside {
+    width: 70%;
     display: flex;
     flex-direction: column;
-align-items: center;
+    align-items: flex-start;
+    padding: 1rem;
+    padding-left: 8rem;
 }
 
-.section-menu figure {
-background-image: url('../../assets/sala.jpg') ;
-background-size: cover;
-background-position: center;
-min-height: 40vh;
+.section-menu div aside table tbody tr td {
+    
+    padding-right: 1rem;
+font-size: 20px;
+}
+.section-menu div figure {
+    background-image: url('../../assets/sala.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 70vh;
+    width: 30%;
+}
+
+@media screen and (max-width: 900px) {
+
+    .section-menu h2 {
+        font-size: 30px;
+
+    }
+    .section-menu div aside table tbody tr td {
+    
+        padding-right: 1rem;
+    font-size: 12px;
+    }
+    .section-menu div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section-menu div aside {
+        width: 100%;
+        align-items: center;
+        padding:4rem;
+    }
+    
+    .section-menu div figure {
+        min-height: 40vh;
+        width: 100%;
+    }
+
 }
