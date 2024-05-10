@@ -8,7 +8,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="fixed top-0 w-full z-50 bg-[#8C1111] text-white nav">
+    <div className="fixed top-0 w-full z-50 bg-white text-black">
       <section className="relative mx-auto">
         {/* Navbar */}
         <nav className="flex justify-between">
