@@ -44,7 +44,12 @@ const Grid = () => {
 
   return (
     <div className="container mx-auto px-4">
-      <div className="grid grid-cols-3 gap-4 mt-4 ml-20">  {/* Cambiado a 3 columnas */}
+      <div className='section-AboutUs-div1'>
+        <h2>Nuestros <span className='title-2-word'>Platos</span></h2>
+        <hr className='hr1'/>
+        <hr className='hr2'/>
+      </div>
+      <div className="grid grid-cols-3 gap-4 mt-4 ml-20"> 
         {currentImages.map((image, index) => (
           <div key={index} className="max-w-sm rounded overflow-hidden shadow-lg">
             <img src={image.url} alt={`Imagen ${index + 1}`} className="w-full" />
