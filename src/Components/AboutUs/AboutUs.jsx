@@ -12,7 +12,7 @@ export default function AboutUs() {
   return (
     <section className='section-AboutUs'>
       <div className='section-AboutUs-div1'>
-        <h2>Nuestra cocina</h2>
+        <h2>Nuestra <span className='title-2-word'>cocina</span></h2>
         <hr className='hr1'/>
         <hr className='hr2'/>
       </div>

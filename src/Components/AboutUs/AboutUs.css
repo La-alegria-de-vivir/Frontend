@@ -16,9 +16,13 @@
 }
 
 .section-AboutUs-div1 h2 {
-  font-size: 30px;
+  font-size: 70px;
+  color:#000000;
+  font-weight: bold;
 }
-
+.title-2-word{
+  color:#BBBC4E;
+}
 .section-AboutUs-div1 hr {
   margin-right: 0;
 
@@ -28,7 +32,7 @@
   width: 50%;
   margin-left: auto;
   height: 2px;
-  background-color: #0A95D0;
+  background-color: #A3D6BD;
   margin-bottom: 0.5rem;
 }
 
@@ -90,7 +94,7 @@
 }
 
 .section-AboutUs-div2 aside img {
-  background-color: #FFDB58;
+  background-color: #F3C14C;
   padding: 0.5rem;
    height: auto;
 }
@@ -115,7 +119,7 @@
   margin-left: auto;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
   .section-AboutUs-div2 {
     flex-direction: column;
   }
@@ -128,5 +132,9 @@
   .section-AboutUs-div2 article {
     width: 100%;
     order: 2;
+  }
+  .section-AboutUs-div1 h2 {
+    font-size: 30px;
+
   }
 }
