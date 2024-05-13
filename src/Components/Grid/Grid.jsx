@@ -12,11 +12,11 @@ const Grid = () => {
       .then(data => {
         if (data && data.menu && Array.isArray(data.menu)) {
           const processedData = data.menu.map(item => ({
-            // Asegúrate de que la propiedad 'image' es correcta
-            url: item.image, // Suponiendo que 'image' ya contiene la URL correcta
+         
+            url: item.image,
             title: item.title,
             description: item.description,
-            id: item._id || item.id // Asegurándonos de tener un ID; si no, usa un fallback o genera uno
+            id: item._id || item.id 
           }));
           setImages(processedData);
         } else {
