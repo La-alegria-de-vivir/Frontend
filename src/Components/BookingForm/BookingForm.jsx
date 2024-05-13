@@ -3,21 +3,11 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 const BookingForm = () => {
     const handleSubmit = async (values) => {
-        const username = localStorage.getItem('username');
-        const bookingData = {
-            people: values.numberOfPeople,
-            place: values.place,
-            date: values.date,
-            hour: values.hour,
-            name: username,
-            phoneNumber: values.phoneNumber
-        };
-
         try {
             const response = await fetch('api/reserve/create', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(bookingData)
+                body: JSON.stringify(values)
             });
 
             if (response.ok) {
@@ -39,7 +29,8 @@ const BookingForm = () => {
                 <aside className="w-1/2 p-4 mr-10">
                     <Formik
                         initialValues={{
-                            numberOfPeople: 1,
+                            name: '',
+                            people: 1, // Cambiado de numberOfPeople a people
                             place: 'Sala',
                             date: '',
                             hour: '',
@@ -47,21 +38,27 @@ const BookingForm = () => {
                         }}
                         validate={(values) => {
                             const errors = {};
-                            if (values.numberOfPeople < 1) {
-                                errors.numberOfPeople = 'El número mínimo de comensales es 1';
+                            if (values.people < 1) { // Cambiado de numberOfPeople a people
+                                errors.people = 'El número mínimo de comensales es 1'; // Cambiado de numberOfPeople a people
                             }
+                            // Puedes agregar más validaciones aquí si es necesario
                             return errors;
                         }}
                         onSubmit={(values) => {
                             handleSubmit(values);
                         }}
                     >
-                        {({ values, handleChange }) => (
+                        {() => (
                             <Form className="w-full">
                                 <div className="mb-4">
-                                    <label htmlFor="numberOfPeople" className="block font-medium mb-1">Número de comensales</label>
-                                    <Field type="number" id="numberOfPeople" name="numberOfPeople" className="w-full p-2 border border-gray-300 rounded-md" min="1" />
-                                    <ErrorMessage name="numberOfPeople" component="div" className="text-red-500 mt-1" />
+                                    <label htmlFor="name" className="block font-medium mb-1">Nombre</label>
+                                    <Field type="text" id="name" name="name" className="w-full p-2 border border-gray-300 rounded-md" />
+                                    <ErrorMessage name="name" component="div" className="text-red-500 mt-1" />
+                                </div>
+                                <div className="mb-4">
+                                    <label htmlFor="people" className="block font-medium mb-1">Número de comensales</label>
+                                    <Field type="number" id="people" name="people" className="w-full p-2 border border-gray-300 rounded-md" min="1" />
+                                    <ErrorMessage name="people" component="div" className="text-red-500 mt-1" />
                                 </div>
                                 <div className="mb-4">
                                     <label htmlFor="place" className="block font-medium mb-1">Lugar</label>
