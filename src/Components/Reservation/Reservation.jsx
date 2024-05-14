@@ -1,16 +1,17 @@
 import React from 'react';
 import { Link } from'react-router-dom';
+import './Reservation.css';
 
 const ReservationSection = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="">
       <div className='section-AboutUs-div1'>
         <h2>Reser<span className='title-2-word'>vas</span></h2>
+      </div>
         <hr className='hr1'/>
         <hr className='hr2'/>
-      </div>
 
-      <p className="mt-4 text-gray-600 text-lg">
+      <p className="mt-4 text-gray-600 text-lg" style={{textAlign: 'center', margin: '0 4rem',textAlign: 'justify'}}>
         Disfruta de una experiencia inolvidable en nuestro restaurante, ya sea en el elegante interior o en la acogedora terraza. Perfecto para cenas románticas, reuniones familiares o eventos especiales. No te pierdas la oportunidad de crear momentos memorables con nosotros.
       </p>
 
