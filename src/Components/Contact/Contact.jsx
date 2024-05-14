@@ -22,7 +22,7 @@ const Contact = () => {
       ...prevData,
       [name]: value,
     }));
-    // Clear previous errors when the user starts typing again
+    
     setErrors((prevErrors) => ({
       ...prevErrors,
       [name]: "",
@@ -66,7 +66,7 @@ const Contact = () => {
     return Object.keys(errors).length === 0;
   
 
-     // Validation de campos ocultos
+   
      if (formData.hiddenField1.trim() || formData.hiddenField2.trim()) {
       setErrorMessage('Submission of hidden fields is not allowed');
       return;
@@ -106,7 +106,7 @@ const Contact = () => {
   };
 
   return (
-    <div
+    <section
       className="py-8 px-4"
       style={{
         backgroundImage: `url(${foodPlateImage})`,
@@ -185,7 +185,6 @@ const Contact = () => {
             )}
           </label>
 
-            {/* Campos ocultos */}
             <input className= "hidden" type="text" id="hiddenField1" name="hiddenField1" value={formData.hiddenField1} onChange={handleChange} />
             <input className= "hidden" type="text" id="hiddenField2" name="hiddenField2" value={formData.hiddenField2} onChange={handleChange} />
 
@@ -200,7 +199,7 @@ const Contact = () => {
           )}
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 

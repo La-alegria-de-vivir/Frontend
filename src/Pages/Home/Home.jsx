@@ -8,7 +8,7 @@ import Reservation from "../../Components/Reservation/Reservation.jsx";
 
 export default function Home() {
   return (
-    <div>
+    <main>
     <HomeImage/>
     <Menu/>
     <Grid/>
@@ -16,6 +16,6 @@ export default function Home() {
     <Reservation />
     <Contact />
     
-    </div>
+    </main>
   )
 }
