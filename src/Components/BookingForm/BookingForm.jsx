@@ -23,7 +23,7 @@ const BookingForm = () => {
             }
         } catch (error) {
             console.error('Error al crear reserva:', error);
-            // Puedes manejar el error de alguna manera
+            
         }
     };
 
@@ -33,9 +33,9 @@ const BookingForm = () => {
     };
 
     return (
-        <div className="max-w-4xl mx-auto bg-white bg-opacity-75 p-6 rounded-lg shadow-md">
+        <section className="max-w-4xl mx-auto bg-white bg-opacity-75 p-6 rounded-lg shadow-md">
             <div>
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 mt-0 lg:mt-0 xl:mt-0 text-center" style={{ marginTop: '6rem' }}>Hacer <span className='text-[#BBBC4E]'>Reservas</span></h2>
+                <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 mt-0 lg:mt-0 xl:mt-0 text-center" style={{ marginTop: '6rem' }}>Hacer <span className='text-[#BBBC4E]'>Reservas</span></h2>
                 <div className="flex justify-center mt-8">
                     <aside className=" w-[23] p-4 ml-15">
                         <Formik
@@ -54,7 +54,25 @@ const BookingForm = () => {
                                 } else if (values.people > 10) {
                                     errors.people = 'El número máximo de comensales es 10';
                                 }
-                                // Puedes agregar más validaciones aquí si es necesario
+
+                                const selectedDate = new Date(values.date);
+                                const selectedDay = selectedDate.getDay(); // 0 = Domingo, 1 = Lunes, ..., 6 = Sábado
+                                const selectedHour = parseInt(values.hour.substring(0, 2)); // Hora seleccionada
+
+                                if ((selectedDay >= 3 && selectedDay <= 6) || selectedDay === 0) {
+                                    // Días permitidos: Miércoles (3), Jueves (4), Viernes (5), Sábado (6), Domingo (0)
+                                    if (
+                                        (selectedHour >= 12 && selectedHour < 17) || // De 12:00 a 17:00 horas
+                                        (selectedHour >= 20 && selectedHour < 24) // De 20:00 a 23:59 horas
+                                    ) {
+                                        // Hora válida
+                                    } else {
+                                        errors.hour = 'Hora no válida. Horario de reserva: Miércoles a Sábado (12:30 - 17:00, 20:00 - 23:30), Domingo (12:30 - 17:00)';
+                                    }
+                                } else {
+                                    errors.hour = 'No se pueden hacer reservas los lunes y martes.';
+                                }
+
                                 return errors;
                             }}
                             onSubmit={(values) => {
@@ -94,6 +112,7 @@ const BookingForm = () => {
                                         <div className="mb-4">
                                             <label htmlFor="hour" className="block font-medium mb-1">Hora</label>
                                             <Field type="time" id="hour" name="hour" className="w-full p-2 border border-gray-300 rounded-md" />
+                                            <ErrorMessage name="hour" component="div" className="text-red-500 mt-1" />
                                         </div>
                                     </div>
                                     <button type="submit" className="bg-gradient-to-r from-[#AEAF50] to-[#F3C14C] hover:from-[#adaf50bd] hover:to-[#F3C14C] text-white font-bold py-2 px-4 rounded-md col-span-2">Reservar</button>
@@ -101,9 +120,7 @@ const BookingForm = () => {
                             )}
                         </Formik>
                         <p className=' mt-4 text-center text-black font-bold'>Para grupos superiores a 10 personas contactar con el restaurante. Gracias</p>
-
                     </aside>
-                    
                 </div>
                 {/* Modal de confirmación */}
                 {showModal && (
@@ -130,7 +147,7 @@ const BookingForm = () => {
                     </div>
                 )}
             </div>
-        </div>
+        </section>
     );
 };
 
