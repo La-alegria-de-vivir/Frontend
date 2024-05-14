@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Pagination from '../Pagination/Pagination';
+import './Grid.css'
 
 const Grid = () => {
   const [images, setImages] = useState([]);
@@ -35,12 +36,12 @@ const Grid = () => {
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="">
       <div className='section-AboutUs-div1'>
         <h2>Nuestros <span className='title-2-word'>Platos</span></h2>
-        <hr className='hr1'/>
-        <hr className='hr2'/>
       </div>
+      <hr className='hr1'/>
+      <hr className='hr2'/>
       <div className="grid grid-cols-3 gap-4 mt-4 ml-20">
         {currentImages.map((menu) => (
           <div key={menu.id} className="max-w-sm rounded overflow-hidden shadow-lg">
