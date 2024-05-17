@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { useNavigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 const BookingForm = () => {
@@ -32,11 +30,6 @@ const BookingForm = () => {
         } catch (error) {
             console.error('Error al crear reserva:', error);
         }
-    };
-
-    const handleCloseModal = () => {
-        setShowModal(false);
-        navigate('/');
     };
 
     const handleCloseModal = () => {
@@ -154,10 +147,6 @@ const BookingForm = () => {
                                     <p><strong>Lugar:</strong> {reservationData.place}</p>
                                     <p><strong>Fecha:</strong> {reservationData.date}</p>
                                     <p><strong>Hora:</strong> {reservationData.hour}</p>
-                                <div>
-                                    <p><strong>Lugar:</strong> {reservationData.place}</p>
-                                    <p><strong>Fecha:</strong> {reservationData.date}</p>
-                                    <p><strong>Hora:</strong> {reservationData.hour}</p>
                                 </div>
                             </div>
                             <p className="text-green-500 font-bold mt-4">¡Reserva realizada con éxito!</p>
@@ -167,16 +156,7 @@ const BookingForm = () => {
                         </div>
                     </div>
                 )}
-                            </div>
-                            <p className="text-green-500 font-bold mt-4">¡Reserva realizada con éxito!</p>
-                            <div className="flex justify-center">
-                                <button onClick={handleCloseModal} className="bg-gradient-to-r from-[#AEAF50] to-[#F3C14C] hover:from-[#adaf50bd] hover:to-[#F3C14C] text-white font-bold py-2 px-4 rounded-md mt-3">Cerrar</button>
-                            </div>
-                        </div>
-                    </div>
-                )}
             </div>
-        </section>
         </section>
     );
 };
