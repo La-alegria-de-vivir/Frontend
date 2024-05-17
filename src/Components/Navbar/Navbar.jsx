@@ -1,5 +1,4 @@
 'use client'
-
 import React, { useState } from 'react';
 import logo from '/logo.png'
 
@@ -10,7 +9,6 @@ function Navbar() {
   return (
     <div className="fixed top-0 w-full z-50 bg-white text-black">
       <section className="relative mx-auto">
-        {/* Navbar */}
         <nav className="flex justify-between">
           <div className="px-5 xl:px-12 py-6 flex w-full items-center">
             <a className="text-3xl font-bold font-heading" href="/">

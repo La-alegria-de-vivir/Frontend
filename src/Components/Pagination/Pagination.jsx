@@ -4,7 +4,7 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage }) => {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   return (
-    <nav>
+    <div>
       <ul className="flex justify-center space-x-2 mt-4">
         <li>
           <button
@@ -25,7 +25,7 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage }) => {
           </button>
         </li>
       </ul>
-    </nav>
+    </div>
   );
 };
 
