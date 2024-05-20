@@ -31,7 +31,7 @@ const Menu = () => {
               {menu.map((item, index) => (
                 <tr key={index}>
                   <td>{item.title}</td>
-                  <td>{item.price}€</td>
+                  <td>{item.price} €</td>
                 </tr>
               ))}
             </tbody>

@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const BookingForm = () => {
     const [showModal, setShowModal] = useState(false);
     const [reservationData, setReservationData] = useState(null);
+    const [showAlert, setShowAlert] = useState(false);
     const navigate = useNavigate();
 
     const handleSubmit = async (values) => {
@@ -19,11 +20,15 @@ const BookingForm = () => {
                 setReservationData(values);
                 setShowModal(true);
             } else {
-                throw new Error('Error al crear reserva');
+                const data = await response.json();
+                if (data.message === 'Se ha superado el número máximo de comensales en este período de dos horas. Las reservas en las próximas dos horas han sido bloqueadas.') {
+                    setShowAlert(true);
+                } else {
+                    throw new Error('Error al crear reserva');
+                }
             }
         } catch (error) {
             console.error('Error al crear reserva:', error);
-            
         }
     };
 
@@ -32,12 +37,38 @@ const BookingForm = () => {
         navigate('/');
     };
 
+    // Crear una lista de horas permitidas en formato 24 horas
+    const allowedTimes = [
+        'Selecciona la hora', '12:30', '12:45', '13:00', '13:15',
+        '13:30', '13:45', '14:00', '14:15',
+        '14:30', '14:45', '15:00', '15:15',
+        '15:30', '15:45', '16:00', '16:15',
+        '16:30', '16:45', '17:00', // De 12:30 a 17:00
+        '20:00', '20:15', '20:30', '20:45',
+        '21:00', '21:15', '21:30', '21:45',
+        '22:00', '22:15', '22:30', '22:45',
+        '23:00', '23:15', '23:30' // De 20:00 a 23:30
+    ];
+
+    const isHourBetween = (hour, minHour, maxHour, minutes = 0) => {
+        if (hour > minHour && hour < maxHour) return true;
+        if (hour === minHour && (minutes === 0 || minutes >= 30)) return true;
+        if (hour === maxHour && (minutes === 0 || minutes <= 30)) return true;
+        return false;
+    };
+    console.log(isHourBetween);
+
     return (
         <section className="max-w-4xl mx-auto bg-white bg-opacity-75 p-6 rounded-lg shadow-md">
             <div>
                 <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 mt-0 lg:mt-0 xl:mt-0 text-center" style={{ marginTop: '6rem' }}>Hacer <span className='text-[#BBBC4E]'>Reservas</span></h2>
+                {showAlert && (
+                    <div className="bg-red-200 text-red-800 p-3 rounded-md mb-4">
+                        Se ha superado el número máximo de comensales en este período de dos horas. Las reservas en las próximas dos horas han sido bloqueadas.
+                    </div>
+                )}
                 <div className="flex justify-center mt-8">
-                    <aside className=" w-[23] p-4 ml-15">
+                    <aside className="w-[23] p-4 ml-15">
                         <Formik
                             initialValues={{
                                 name: '',
@@ -58,19 +89,31 @@ const BookingForm = () => {
                                 const selectedDate = new Date(values.date);
                                 const selectedDay = selectedDate.getDay(); // 0 = Domingo, 1 = Lunes, ..., 6 = Sábado
                                 const selectedHour = parseInt(values.hour.substring(0, 2)); // Hora seleccionada
+                                const selectedMinutes = parseInt(values.hour.substring(3)); // Minutos seleccionados
+                                console.log(selectedMinutes);
 
-                                if ((selectedDay >= 3 && selectedDay <= 6) || selectedDay === 0) {
-                                    // Días permitidos: Miércoles (3), Jueves (4), Viernes (5), Sábado (6), Domingo (0)
-                                    if (
-                                        (selectedHour >= 12 && selectedHour < 17) || // De 12:00 a 17:00 horas
-                                        (selectedHour >= 20 && selectedHour < 24) // De 20:00 a 23:59 horas
-                                    ) {
-                                        // Hora válida
-                                    } else {
-                                        errors.hour = 'Hora no válida. Horario de reserva: Miércoles a Sábado (12:30 - 17:00, 20:00 - 23:30), Domingo (12:30 - 17:00)';
+                                if (selectedDay === 1 || selectedDay === 2) {
+                                    // Lunes (1) y Martes (2) no permitidos
+                                    errors.date = 'No se pueden hacer reservas los lunes y martes.';
+                                } else if (selectedDay === 0) {
+                                    // Domingo
+                                    if (!isHourBetween(selectedHour, 12, 17, selectedMinutes)) {
+                                        errors.hour = '¡Hora no válida!. Horario de reserva para Domingo es de 12:30 a 17:00.';
                                     }
-                                } else {
-                                    errors.hour = 'No se pueden hacer reservas los lunes y martes.';
+                                } else if (selectedDay >=3 || selectedDay <=6) {
+                                    // Miércoles (3) a Sábado (6)
+                                    if (
+                                        !isHourBetween(selectedHour, 12, 17, selectedMinutes) &&
+                                        !isHourBetween(selectedHour, 20, 23, selectedMinutes)
+                                    ) {
+                                        errors.hour = '¡Hora no válida!. Horario de reserva de Miércoles a Sábado es de 12:30 a 17:00 y de 20:00 a 23:30.';
+                                    }
+                                }
+
+                                // Validar el número de teléfono
+                                const phoneNumberRegex = /^\d{9}$/;
+                                if (!phoneNumberRegex.test(values.phoneNumber)) {
+                                    errors.phoneNumber = 'El número de teléfono debe contener 9 dígitos numéricos.';
                                 }
 
                                 return errors;
@@ -95,6 +138,7 @@ const BookingForm = () => {
                                         <div className="mb-4">
                                             <label htmlFor="phoneNumber" className="block font-medium mb-1">Número de teléfono</label>
                                             <Field type="tel" id="phoneNumber" name="phoneNumber" className="w-full p-2 border border-gray-300 rounded-md" />
+                                            <ErrorMessage name="phoneNumber" component="div" className="text-red-500 mt-1" />
                                         </div>
                                     </div>
                                     <div>
@@ -108,10 +152,15 @@ const BookingForm = () => {
                                         <div className="mb-4">
                                             <label htmlFor="date" className="block font-medium mb-1">Fecha</label>
                                             <Field type="date" id="date" name="date" className="w-full p-2 border border-gray-300 rounded-md" />
+                                            <ErrorMessage name="date" component="div" className="text-red-500 mt-1" />
                                         </div>
                                         <div className="mb-4">
                                             <label htmlFor="hour" className="block font-medium mb-1">Hora</label>
-                                            <Field type="time" id="hour" name="hour" className="w-full p-2 border border-gray-300 rounded-md" />
+                                            <Field as="select" id="hour" name="hour" className="w-full p-2 border border-gray-300 rounded-md">
+                                                {allowedTimes.map(time => (
+                                                    <option key={time} value={time}>{time}</option>
+                                                ))}
+                                            </Field>
                                             <ErrorMessage name="hour" component="div" className="text-red-500 mt-1" />
                                         </div>
                                     </div>

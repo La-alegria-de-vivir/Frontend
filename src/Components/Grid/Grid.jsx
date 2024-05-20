@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Pagination from '../Pagination/Pagination';
-import './Grid.css'
+import './Grid.css';
 
 const Grid = () => {
   const [images, setImages] = useState([]);
@@ -13,7 +13,6 @@ const Grid = () => {
       .then(data => {
         if (data && data.menu && Array.isArray(data.menu)) {
           const processedData = data.menu.map(item => ({
-         
             url: item.image,
             title: item.title,
             description: item.description,
@@ -36,15 +35,15 @@ const Grid = () => {
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   return (
-    <div className="">
-      <div className='section-AboutUs-div1'>
+    <div className="container mx-auto px-4">
+      <div className='section-AboutUs-div1 text-center'>
         <h2>Nuestros <span className='title-2-word'>Platos</span></h2>
       </div>
       <hr className='hr1'/>
       <hr className='hr2'/>
-      <div className="grid grid-cols-3 gap-4 mt-4 ml-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
         {currentImages.map((menu) => (
-          <div key={menu.id} className="max-w-sm rounded overflow-hidden shadow-lg">
+          <div key={menu.id} className="max-w-sm rounded overflow-hidden shadow-lg mx-auto">
             <img src={menu.url} alt={menu.title} className="w-full" />
             <div className="px-6 py-4">
               <p className="text-gray-700 text-base">{menu.title}</p>
