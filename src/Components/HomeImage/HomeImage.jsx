@@ -1,10 +1,10 @@
-import React from 'react'
-import './HomeImage.css'
+import React from "react";
+import Carousel from "../Carousel/Carousel";
 
 export default function HomeImage() {
   return (
-    <main className="image-home">
-      <h2>Disfruta la Cocina Viva y en Constante Evolución!</h2>
-    </main>
-  )
+    <div style={{ width: "100%", height: "100%" }} className=" mt-12">
+      <Carousel />
+    </div>
+  );
 }
