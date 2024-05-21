@@ -3,12 +3,13 @@ import "./Carousel.css";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
 const imageUrls = [
-  "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D",
-  "https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHJlc3RhdXJhbnR8ZW58MHx8MHx8fDA%3D",
-  "https://i.pinimg.com/originals/51/82/ac/5182ac536727d576c78a9320ac62de30.jpg",
-  "https://wallpapercave.com/wp/wp3386769.jpg",
-  "https://wallpaperaccess.com/full/809523.jpg",
-  "https://getwallpapers.com/wallpaper/full/5/c/0/606489.jpg",
+  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/20240516102055_IMG_1256.JPG?alt=media&token=3b8f273f-2ff6-4ca4-a844-86fa6a715a67",
+  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/20240516102256_IMG_1260.JPG?alt=media&token=e105d936-e692-4211-9326-f11e840a9ac9",
+  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/20240516102803_IMG_1267.JPG?alt=media&token=9c044a2d-7e31-4a6d-82fc-afddac2547ab",
+  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/20240516104854_IMG_1301.JPG?alt=media&token=d3c871b9-ef1b-403d-a7d0-16ec8504e184",
+  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/20240516113409_IMG_1490.JPG?alt=media&token=6a914c51-01cf-41f6-a863-06054592d3e2",
+  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/20240516114156_IMG_1539.JPG?alt=media&token=e72ab46e-689f-4343-9203-986d7e41ecbf",
+  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/IMG_6912.JPG?alt=media&token=5d5319d9-d481-4e82-afd1-364cc2dee0c6",
 ];
 
 export default function Carousel() {
