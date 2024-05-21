@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
-import foodPlateImage from "../../assets/imagecontact.jpg";
 import validator from "validator";
 import emailjs from "@emailjs/browser";
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -109,8 +109,7 @@ const Contact = () => {
     <section
       className="py-8 px-4"
       style={{
-        backgroundImage: `url(${foodPlateImage})`,
-        backgroundSize: "cover",
+        backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/fondocontacto.JPG?alt=media&token=2c0ce69c-45e0-4295-8b6a-f9fcb4921ec1)`,        backgroundSize: "cover",
         backgroundPosition: "center",
         margin: "70px",
         padding: "70px",

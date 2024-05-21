@@ -18,7 +18,7 @@ const ReservationSection = () => {
       <div className="flex flex-wrap justify-center gap-8 mt-6">
         <div className="max-w-xs"> 
           
-          <img src="/images/terraza.JPG" alt="Terraza" className="w-1/1 self-center rounded-lg shadow-lg border-4 border-yellow-400"/>
+          <img src="/images/terraza.jpg" alt="Terraza" className="w-1/1 self-center rounded-lg shadow-lg border-4 border-yellow-400"/>
           <p className="text-center mt-2">Nuestra Terraza</p>
         </div>
         <div className="max-w-xs"> 

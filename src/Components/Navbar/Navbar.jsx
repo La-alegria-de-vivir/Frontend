@@ -18,7 +18,7 @@ function Navbar() {
                 src={logo}
                 width={50}
                 height={50}
-                className="rounded-full"
+                // className="rounded-full"
                 alt="Logo"
               />
             </a>
