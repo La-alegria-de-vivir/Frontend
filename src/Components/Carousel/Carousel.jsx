@@ -3,13 +3,14 @@ import "./Carousel.css";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
 const imageUrls = [
-  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/20240516102055_IMG_1256.JPG?alt=media&token=3b8f273f-2ff6-4ca4-a844-86fa6a715a67",
-  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/20240516102256_IMG_1260.JPG?alt=media&token=e105d936-e692-4211-9326-f11e840a9ac9",
-  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/20240516102803_IMG_1267.JPG?alt=media&token=9c044a2d-7e31-4a6d-82fc-afddac2547ab",
-  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/20240516104854_IMG_1301.JPG?alt=media&token=d3c871b9-ef1b-403d-a7d0-16ec8504e184",
-  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/20240516113409_IMG_1490.JPG?alt=media&token=6a914c51-01cf-41f6-a863-06054592d3e2",
-  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/20240516114156_IMG_1539.JPG?alt=media&token=e72ab46e-689f-4343-9203-986d7e41ecbf",
-  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/IMG_6912.JPG?alt=media&token=5d5319d9-d481-4e82-afd1-364cc2dee0c6",
+  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/Carrousel-4.jpg?alt=media&token=7bc60ba0-367c-4cd4-8ab9-1ace22002ec9", 
+   "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/Carrousel-2.jpg?alt=media&token=39933a13-707d-48f3-a880-67c0debfdec4",
+  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/Carrousel-3.jpg?alt=media&token=aa0a1c7a-1af2-4771-9644-ca6910bca226",
+  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/Carrousel-5.jpg?alt=media&token=966bef8e-5e3c-4469-8922-060f70bd7c30",
+  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/Carrousel-6.jpg?alt=media&token=ddba7a21-8367-4dbb-ad93-f501a54b20d3",
+  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/Carrousel-7.jpg?alt=media&token=1ffea73d-985e-44f3-91c5-66eec48db10d",
+  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/Carrousel-8.jpg?alt=media&token=b78f19f9-7a31-4eb3-a536-4b5c5bacbd7d",
+  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/Carrousel-1.jpg?alt=media&token=3ad2e858-b812-4a40-becc-1d92b248a6c8",
 ];
 
 export default function Carousel() {

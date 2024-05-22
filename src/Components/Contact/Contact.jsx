@@ -106,17 +106,17 @@ const Contact = () => {
   };
 
   return (
-    <section
+    <section id="Contacto"
       className="py-8 px-4"
       style={{
         backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/fondocontacto.JPG?alt=media&token=2c0ce69c-45e0-4295-8b6a-f9fcb4921ec1)`,        backgroundSize: "cover",
         backgroundPosition: "center",
         margin: "70px",
-        padding: "70px",
+        padding: "25px",
         borderRadius: "20px",
       }}
     >
-      <div className="max-w-4xl mx-auto bg-white bg-opacity-75 p-6 rounded-lg shadow-md">
+      <div className="max-w-3xl mx-auto bg-white bg-opacity-75 p-6 rounded-lg shadow-md">
         <p className="text-lg mb-6 text-center">
           Para cualquier consulta o sugerencia, <br />no dude en ponerse en <span className="font-bold">contacto</span> con nosotros.
         </p>

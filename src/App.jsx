@@ -7,6 +7,7 @@ import ReservationPage from './Pages/ReservationPage/ReservationPage.jsx';
 import PrivacyPolicy from './Pages/PrivacyPolicy/PrivacyPolicy.jsx';
 import LegalWarning from './Pages/LegalWarning/LegalWarning.jsx';
 import CookiesPolicy from './Pages/CookiesPolicy/CookiesPolicy.jsx';
+import Group from './Pages/Group/Group.jsx'
 
 function App() {
   
@@ -20,6 +21,7 @@ function App() {
         <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
         <Route path='/legal-warning' element={<LegalWarning/>}/>
         <Route path='/cookies-policy' element={<CookiesPolicy/>}/>
+        <Route path='/grupos' element={<Group/>}/>        
         <Route path="*" element={<NotFound />} />
       </Routes>
 

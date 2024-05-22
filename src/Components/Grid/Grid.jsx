@@ -8,7 +8,7 @@ const Grid = () => {
   const [imagesPerPage] = useState(3);
 
   useEffect(() => {
-    fetch('/api/menu/getmenu')
+    fetch('https://backend-la-alegria-de-vivir.onrender.com/api/menu/getmenu')
       .then(response => response.json())
       .then(data => {
         if (data && data.menu && Array.isArray(data.menu)) {

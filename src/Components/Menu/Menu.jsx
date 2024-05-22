@@ -5,7 +5,8 @@ const Menu = () => {
   const [menu, setMenu] = useState([]);
 
   useEffect(() => {
-    fetch('/api/menu/getmenu')
+        
+        fetch('https://backend-la-alegria-de-vivir.onrender.com/api/menu/getmenu')
       .then(response => response.json())
       .then(data => {
         if (data && Array.isArray(data.menu)) {
@@ -20,7 +21,7 @@ const Menu = () => {
   }, []);
 
   return (
-    <section className='section-menu'>
+    <section className='section-menu' id='Carta'>
       <h2>Nuestra <span className='title-2-word'>carta</span></h2>
       <hr className='hr1' />
       <hr className='hr2' />

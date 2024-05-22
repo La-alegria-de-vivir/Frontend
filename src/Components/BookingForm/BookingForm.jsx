@@ -10,7 +10,7 @@ const BookingForm = () => {
 
     const handleSubmit = async (values) => {
         try {
-            const response = await fetch('api/reserve/create', {
+            const response = await fetch('https://backend-la-alegria-de-vivir.onrender.com/api/reserve/create', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(values)

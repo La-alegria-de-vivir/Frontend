@@ -16,7 +16,7 @@ function Navbar() {
           <a className="text-3xl font-bold font-heading" href="/">
               <img
                 src={logo}
-                width={50}
+                width={140}
                 height={50}
                 // className="rounded-full"
                 alt="Logo"
@@ -53,17 +53,20 @@ function Navbar() {
           </button>
           <ul className={`${menuOpen ? 'flex flex-col w-full items-center space-y-4 mt-4' : 'hidden'} md:hidden`}>
           <li><a className="hover:text-[#BBBC4E]" href="/">Inicio</a></li>
-              <li><a className="hover:text-[#BBBC4E]" href="#">Carta</a></li>
+              <li><a className="hover:text-[#BBBC4E]" href="#Carta">Carta</a></li>
               <li><a className="hover:text-[#BBBC4E]" href="/reservation">Reserva</a></li>
-              <li><a className="hover:text-[#BBBC4E]" href="#">Sobre Nosotros</a></li>
-              <li><a className="hover:text-[#BBBC4E]" href="#">Contacto</a></li>
+              <li><a className="hover:text-[#BBBC4E]" href="#AboutUs">Nuestra cocina</a></li>
+              <li><a className="hover:text-[#BBBC4E]" href="#Contacto">Contacto</a></li>
+              <li><a className="hover:text-[#BBBC4E]" href="/Grupos">Grupos</a></li>
           </ul>
           <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
           <li><a className="hover:text-[#BBBC4E]" href="/">Inicio</a></li>
-              <li><a className="hover:text-[#BBBC4E]" href="#">Carta</a></li>
+              <li><a className="hover:text-[#BBBC4E]" href="#Carta">Carta</a></li>
               <li><a className="hover:text-[#BBBC4E]" href="/reservation">Reserva</a></li>
-              <li><a className="hover:text-[#BBBC4E]" href="#">Sobre Nosotros</a></li>
-              <li><a className="hover:text-[#BBBC4E]" href="#">Contacto</a></li>
+              <li><a className="hover:text-[#BBBC4E]" href="#AboutUs">Nuestra cocina</a></li>
+              <li><a className="hover:text-[#BBBC4E]" href="#Contacto">Contacto</a></li>
+              <li><a className="hover:text-[#BBBC4E]" href="/Grupos">Grupos</a></li>
+
           </ul>
         </nav>
       </section>
