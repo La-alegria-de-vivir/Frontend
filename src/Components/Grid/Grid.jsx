@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Pagination from '../Pagination/Pagination';
 import './Grid.css';
+import Modal from '../Modal/Modal';
 
 const Grid = () => {
   const [images, setImages] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [imagesPerPage] = useState(3);
+  const [selectedDish, setSelectedDish] = useState(null); 
+  const [showModal, setShowModal] = useState(false); 
 
   useEffect(() => {
     fetch('https://backend-la-alegria-de-vivir.onrender.com/api/menu/getmenu')
@@ -16,6 +19,7 @@ const Grid = () => {
             url: item.image,
             title: item.title,
             description: item.description,
+            ingredients: item.ingredients || [], 
             id: item._id || item.id 
           }));
           setImages(processedData);
@@ -34,6 +38,16 @@ const Grid = () => {
 
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
+  const openModal = (dish) => {
+    setSelectedDish(dish);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setSelectedDish(null);
+    setShowModal(false);
+  };
+
   return (
     <div className="container mx-auto px-4">
       <div className='section-AboutUs-div1 text-center'>
@@ -43,7 +57,11 @@ const Grid = () => {
       <hr className='hr2'/>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
         {currentImages.map((menu) => (
-          <div key={menu.id} className="max-w-sm rounded overflow-hidden shadow-lg mx-auto">
+          <div 
+            key={menu.id} 
+            className="max-w-sm rounded overflow-hidden shadow-lg mx-auto cursor-pointer"
+            onClick={() => openModal(menu)} // Abre el modal al hacer clic
+          >
             <img src={menu.url} alt={menu.title} className="w-full" />
             <div className="px-6 py-4">
               <p className="text-gray-700 text-base">{menu.title}</p>
@@ -57,6 +75,9 @@ const Grid = () => {
         paginate={paginate} 
         currentPage={currentPage}
       />
+      {showModal && selectedDish && ( // Renderiza el modal condicionalmente
+        <Modal dish={selectedDish} closeModal={closeModal} />
+      )}
     </div>
   );
 };
