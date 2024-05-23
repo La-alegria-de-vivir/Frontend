@@ -37,17 +37,17 @@ const BookingForm = () => {
         navigate('/');
     };
 
-    // Crear una lista de horas permitidas en formato 24 horas
+   
     const allowedTimes = [
         'Selecciona la hora', '12:30', '12:45', '13:00', '13:15',
         '13:30', '13:45', '14:00', '14:15',
         '14:30', '14:45', '15:00', '15:15',
         '15:30', '15:45', '16:00', '16:15',
-        '16:30', '16:45', '17:00', // De 12:30 a 17:00
+        '16:30', '16:45', '17:00', 
         '20:00', '20:15', '20:30', '20:45',
         '21:00', '21:15', '21:30', '21:45',
         '22:00', '22:15', '22:30', '22:45',
-        '23:00', '23:15', '23:30' // De 20:00 a 23:30
+        '23:00', '23:15', '23:30' 
     ];
 
     const isHourBetween = (hour, minHour, maxHour, minutes = 0) => {
@@ -87,21 +87,21 @@ const BookingForm = () => {
                                 }
 
                                 const selectedDate = new Date(values.date);
-                                const selectedDay = selectedDate.getDay(); // 0 = Domingo, 1 = Lunes, ..., 6 = Sábado
-                                const selectedHour = parseInt(values.hour.substring(0, 2)); // Hora seleccionada
-                                const selectedMinutes = parseInt(values.hour.substring(3)); // Minutos seleccionados
+                                const selectedDay = selectedDate.getDay(); 
+                                const selectedHour = parseInt(values.hour.substring(0, 2)); 
+                                const selectedMinutes = parseInt(values.hour.substring(3)); 
                                 console.log(selectedMinutes);
 
                                 if (selectedDay === 1 || selectedDay === 2) {
-                                    // Lunes (1) y Martes (2) no permitidos
+                                   
                                     errors.date = 'No se pueden hacer reservas los lunes y martes.';
                                 } else if (selectedDay === 0) {
-                                    // Domingo
+                                   
                                     if (!isHourBetween(selectedHour, 12, 17, selectedMinutes)) {
                                         errors.hour = '¡Hora no válida!. Horario de reserva para Domingo es de 12:30 a 17:00.';
                                     }
                                 } else if (selectedDay >=3 || selectedDay <=6) {
-                                    // Miércoles (3) a Sábado (6)
+                                    
                                     if (
                                         !isHourBetween(selectedHour, 12, 17, selectedMinutes) &&
                                         !isHourBetween(selectedHour, 20, 23, selectedMinutes)

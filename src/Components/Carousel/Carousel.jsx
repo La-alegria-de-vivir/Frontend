@@ -29,7 +29,7 @@ export default function Carousel() {
   useEffect(() => {
     const interval = setInterval(() => {
       handleNextSlide();
-    }, 5000);
+    }, 7000);
     return () => clearInterval(interval);
   }, [handleNextSlide]);
 
@@ -39,7 +39,7 @@ export default function Carousel() {
     backgroundImage: `url(${imageUrls[currentIndex]})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    transition: "background-image 5s ease-in-out",
+    transition: "background-image 6s ease-in-out",
   };
 
   return (
@@ -68,7 +68,7 @@ export default function Carousel() {
           <button
             key={index}
             className={`w-3 h-3 mx-1 rounded-full bg-gray-800 ${
-              index === currentIndex ? "bg-[#BBBC4E]" : ""
+              index === currentIndex ? "bg-lime-600" : ""
             }`}
             onClick={() => setCurrentIndex(index)}
           ></button>
