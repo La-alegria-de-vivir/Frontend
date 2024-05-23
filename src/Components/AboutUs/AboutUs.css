@@ -1,0 +1,145 @@
+.section-AboutUs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 40vh;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.section-AboutUs-div1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 5vh;
+  align-items: center;
+}
+
+.section-AboutUs-div1 h2 {
+  font-size: 70px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.title-2-word {
+  color: #BBBC4E;
+}
+
+.section-AboutUs-div1 hr {
+  margin-right: 0;
+
+}
+
+.hr1 {
+  width: 50%;
+  margin-left: auto;
+  height: 2px;
+  background-color: #A3D6BD;
+  margin-bottom: 0.5rem;
+}
+
+.hr2 {
+  margin-left: auto;
+  width: 55%;
+  height: 2px;
+  background-color: #BBBC4E;
+}
+
+.section-AboutUs-div2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 20vh;
+  justify-content: space-around;
+  padding: 0.5rem;
+  max-width: 100%;
+}
+
+.section-AboutUs-div2 aside {
+  display: flex;
+  flex-direction: column;
+}
+
+.figure1-aboutus {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  min-height: 30vh;
+  padding: 0.5rem;
+  min-width: 20rem;
+}
+
+.figure2-aboutus {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 30rem;
+}
+
+.section-AboutUs-div2 aside img {
+  max-width: 11rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  background-color: #F3C14C;
+  height: auto;
+}
+
+.figure2-aboutus img {
+  max-width: 23rem !important;
+}
+
+.section-AboutUs-div2 article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem;
+  max-width: 50%;
+}
+
+.section-AboutUs-div2 article p {
+  text-align: justify;
+  font-size: 15px;
+  margin-bottom: 1.15rem;
+}
+
+.section-AboutUs-div2 article img {
+
+  max-width: 11rem;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 900px) {
+  .section-AboutUs-div2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-AboutUs-div2 aside {
+    max-width: 80%;
+    height: auto;
+    align-items: center;
+  }
+
+  .figure1-aboutus {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .figure2-aboutus {
+    max-width: 13rem !important;
+  }
+
+  .figure2-aboutus img {
+    max-width: 13rem !important;
+  }
+
+  .section-AboutUs-div2 article {
+    max-width: 100%;
+    order: 2;
+  }
+
+  .section-AboutUs-div1 h2 {
+    font-size: 30px;
+
+  }
+}

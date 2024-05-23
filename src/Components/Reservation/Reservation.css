@@ -1,0 +1,17 @@
+
+
+.hr1 {
+  width: 50%;
+  margin-left: auto;
+  height: 2px;
+  background-color: #A3D6BD;
+  margin-bottom: 0.5rem;
+}
+
+.hr2 {
+  margin-left: auto !important;
+  width: 55%;
+  height: 2px;
+  background-color: #BBBC4E;
+}
+
