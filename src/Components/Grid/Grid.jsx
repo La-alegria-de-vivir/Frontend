@@ -49,7 +49,7 @@ const Grid = () => {
   };
 
   return (
-    <div className="container mx-auto px-4">
+    <section className="container mx-auto px-4">
       <div className='section-AboutUs-div1 text-center'>
         <h2>Nuestros <span className='title-2-word'>Platos</span></h2>
       </div>
@@ -81,7 +81,7 @@ const Grid = () => {
       {showModal && selectedDish && (
         <Modal dish={selectedDish} closeModal={closeModal} />
       )}
-    </div>
+    </section>
   );
 };
 
