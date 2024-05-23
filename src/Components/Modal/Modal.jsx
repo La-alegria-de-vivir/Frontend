@@ -6,7 +6,7 @@ const Modal = ({ dish, closeModal }) => {
       <div className="bg-white rounded-lg p-6 relative max-w-lg mx-auto">
         <button
           onClick={closeModal}
-          className="absolute top-2 right-2 text-gray-700 hover:text-gray-900"
+          className="absolute top-2 right-2 text-gray-700 hover:text-gray-900 text-4xl"
         >
           &times;
         </button>

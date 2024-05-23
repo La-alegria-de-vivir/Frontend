@@ -7,8 +7,8 @@ const Grid = () => {
   const [images, setImages] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [imagesPerPage] = useState(3);
-  const [selectedDish, setSelectedDish] = useState(null); 
-  const [showModal, setShowModal] = useState(false); 
+  const [selectedDish, setSelectedDish] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     fetch('https://backend-la-alegria-de-vivir.onrender.com/api/menu/getmenu')
@@ -19,8 +19,8 @@ const Grid = () => {
             url: item.image,
             title: item.title,
             description: item.description,
-            ingredients: item.ingredients || [], 
-            id: item._id || item.id 
+            ingredients: item.ingredients || [],
+            id: item._id || item.id
           }));
           setImages(processedData);
         } else {
@@ -59,10 +59,13 @@ const Grid = () => {
         {currentImages.map((menu) => (
           <div 
             key={menu.id} 
-            className="max-w-sm rounded overflow-hidden shadow-lg mx-auto cursor-pointer"
-            onClick={() => openModal(menu)} // Abre el modal al hacer clic
+            className="relative max-w-sm rounded overflow-hidden shadow-lg mx-auto cursor-pointer transform transition-transform hover:scale-105"
+            onClick={() => openModal(menu)}
           >
-            <img src={menu.url} alt={menu.title} className="w-full" />
+            <img src={menu.url} alt={menu.title} className="w-full opacity-90 hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+              <span className="text-white text-lg">Ver más</span>
+            </div>
             <div className="px-6 py-4">
               <p className="text-gray-700 text-base">{menu.title}</p>
             </div>
@@ -75,7 +78,7 @@ const Grid = () => {
         paginate={paginate} 
         currentPage={currentPage}
       />
-      {showModal && selectedDish && ( // Renderiza el modal condicionalmente
+      {showModal && selectedDish && (
         <Modal dish={selectedDish} closeModal={closeModal} />
       )}
     </div>
