@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import logo from '../../../public/logo.png';
+import { Link } from 'react-router-dom';
 
 
 function Navbar() {
@@ -54,18 +55,18 @@ function Navbar() {
           <ul className={`${menuOpen ? 'flex flex-col w-full items-center space-y-4 mt-4' : 'hidden'} md:hidden`}>
           <li><a className="hover:text-[#BBBC4E]" href="/">Inicio</a></li>
               <li><a className="hover:text-[#BBBC4E]" href="/#Carta">Carta</a></li>
-              <li><a className="hover:text-[#BBBC4E]" href="/reservation">Reserva</a></li>
+              <li><Link className="hover:text-[#BBBC4E]" to="/reservation">Reserva</Link></li>
               <li><a className="hover:text-[#BBBC4E]" href="/#AboutUs">Nuestra cocina</a></li>
               <li><a className="hover:text-[#BBBC4E]" href="/#Contacto">Contacto</a></li>
-              <li><a className="hover:text-[#BBBC4E]" href="/Grupos">Grupos</a></li>
+              <li><Link className="hover:text-[#BBBC4E]" to="/Grupos">Grupos</Link></li>
           </ul>
           <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
           <li><a className="hover:text-[#BBBC4E]" href="/">Inicio</a></li>
               <li><a className="hover:text-[#BBBC4E]" href="/#Carta">Carta</a></li>
-              <li><a className="hover:text-[#BBBC4E]" href="/reservation">Reserva</a></li>
+              <li><Link className="hover:text-[#BBBC4E]" to="/reservation">Reserva</Link></li>
               <li><a className="hover:text-[#BBBC4E]" href="/#AboutUs">Nuestra cocina</a></li>
               <li><a className="hover:text-[#BBBC4E]" href="/#Contacto">Contacto</a></li>
-              <li><a className="hover:text-[#BBBC4E]" href="/Grupos">Grupos</a></li>
+              <li><Link className="hover:text-[#BBBC4E]" to="/Grupos">Grupos</Link></li>
 
           </ul>
         </nav>
