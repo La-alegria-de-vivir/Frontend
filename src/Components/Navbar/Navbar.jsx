@@ -62,7 +62,7 @@ function Navbar() {
           <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
           <li><a className="hover:text-[#BBBC4E]" href="/">Inicio</a></li>
               <li><a className="hover:text-[#BBBC4E]" href="/#Carta">Carta</a></li>
-              <li><a className="hover:text-[#BBBC4E]" href="/reservation">Reserva</a></li>
+              <li><a className="hover:text-[#BBBC4E]" href="./reservation">Reserva</a></li>
               <li><a className="hover:text-[#BBBC4E]" href="/#AboutUs">Nuestra cocina</a></li>
               <li><a className="hover:text-[#BBBC4E]" href="/#Contacto">Contacto</a></li>
               <li><a className="hover:text-[#BBBC4E]" href="/Grupos">Grupos</a></li>
