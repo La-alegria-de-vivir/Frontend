@@ -12,7 +12,7 @@ describe("Contact Form", () => {
   });
 
   it("shows error messages for empty required fields", function () {
-    cy.get("form").submit(); // Intenta enviar el formulario vacío
+    cy.get("form").submit(); 
 
     cy.get('[name="firstName"]')
       .parent()
@@ -60,7 +60,7 @@ describe("Contact Form", () => {
       .should("contain", "El mensaje debe tener menos de 400 caracteres.");
   });
 
-  /*   it("should send the form successfully", () => {
+     it("should send the form successfully", () => {
     cy.get('input[name="firstName"]').type("John Doe");
     cy.get('input[name="email"]').type("john@example.com");
     cy.get('input[name="phone"]').type("1234567890");
@@ -70,5 +70,5 @@ describe("Contact Form", () => {
       "contain",
       "¡Tu consulta se ha enviado con éxito! Gracias."
     );
-  }); */
+  }); 
 });
