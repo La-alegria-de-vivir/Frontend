@@ -3,8 +3,8 @@ import "./Carousel.css";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
 const imageUrls = [
-  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/Carrousel-4.jpg?alt=media&token=7bc60ba0-367c-4cd4-8ab9-1ace22002ec9", 
-   "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/Carrousel-2.jpg?alt=media&token=39933a13-707d-48f3-a880-67c0debfdec4",
+  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/Carrousel-4.jpg?alt=media&token=7bc60ba0-367c-4cd4-8ab9-1ace22002ec9",
+  "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/Carrousel-2.jpg?alt=media&token=39933a13-707d-48f3-a880-67c0debfdec4",
   "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/Carrousel-3.jpg?alt=media&token=aa0a1c7a-1af2-4771-9644-ca6910bca226",
   "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/Carrousel-5.jpg?alt=media&token=966bef8e-5e3c-4469-8922-060f70bd7c30",
   "https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/Carrousel-6.jpg?alt=media&token=ddba7a21-8367-4dbb-ad93-f501a54b20d3",
@@ -44,9 +44,14 @@ export default function Carousel() {
 
   return (
     <div className="relative">
-      <div className="flex justify-center items-center" style={slideStyle}>
+      <div
+        id="carousel-slide"
+        className="flex justify-center items-center"
+        style={slideStyle}
+      >
         {/* Navigation buttons */}
         <button
+          id="prev-slide"
           className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white text-bolder lg:text-2xl md:text-lg sm:text-xs p-2 rounded-full hover:bg-opacity-80 hover:text-[#BBBC4E] focus:outline-none"
           onClick={handlePrevSlide}
         >
@@ -56,6 +61,7 @@ export default function Carousel() {
           ¡Disfruta la Cocina Viva y en Constante Evolución!
         </h2>
         <button
+          id="next-slide"
           className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white  text-bolder lg:text-2xl md:text-lg sm:text-xs p-2 rounded-full hover:bg-opacity-80 hover:text-[#BBBC4E] focus:outline-none"
           onClick={handleNextSlide}
         >
@@ -63,7 +69,7 @@ export default function Carousel() {
         </button>
       </div>
       {/* Indicators */}
-      <div className="flex justify-center mt-2">
+      <div id="indicators" className="flex justify-center mt-2">
         {imageUrls.map((url, index) => (
           <button
             key={index}
@@ -77,3 +83,4 @@ export default function Carousel() {
     </div>
   );
 }
+export { imageUrls };
