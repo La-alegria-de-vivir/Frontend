@@ -9,16 +9,16 @@ const allergenIcons = {
   huevos: <FaEgg />,
   pescado: <FaFish />,
   cacahuetes: <GiPeanut />,
-  soja: <FaCheese />, // Temporal icon
+  soja: <FaCheese />, 
   lácteos: <LuMilk />,
   frutos: <GiAlmond />,
-  apio: <FaFish />, // Temporal icon
-  mostaza: <FaCheese />, // Temporal icon
-  sésamo: <GiWheat />, // Temporal icon
+  apio: <FaFish />, 
+  mostaza: <FaCheese />, 
+  sésamo: <GiWheat />, 
   sulfitos: <FaWineGlassAlt />,
-  altramuces: <FaCheese />, // Temporal icon
+  altramuces: <FaCheese />, 
   moluscos: <FaFish />,
-  consultar: "Consultar con cocina"// Temporal icon
+  consultar: "Consultar con cocina"
 };
 
 const Modal = ({ dish, closeModal }) => {
