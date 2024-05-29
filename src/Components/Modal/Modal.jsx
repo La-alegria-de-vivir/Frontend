@@ -1,24 +1,59 @@
 import React from 'react';
+import { FaFish, FaEgg, FaCheese, FaWineGlassAlt } from 'react-icons/fa';
+import { GiWheat, GiPeanut, GiSadCrab, GiAlmond } from 'react-icons/gi';
+import { LuMilk} from 'react-icons/lu';
+
+const allergenIcons = {
+  gluten: <GiWheat />,
+  crustaceos: <GiSadCrab />,
+  huevos: <FaEgg />,
+  pescado: <FaFish />,
+  cacahuetes: <GiPeanut />,
+  soja: <FaCheese />, // Temporal icon
+  lácteos: <LuMilk />,
+  frutos: <GiAlmond />,
+  apio: <FaFish />, // Temporal icon
+  mostaza: <FaCheese />, // Temporal icon
+  sésamo: <GiWheat />, // Temporal icon
+  sulfitos: <FaWineGlassAlt />,
+  altramuces: <FaCheese />, // Temporal icon
+  moluscos: <FaFish />,
+  consultar: "Consultar con cocina"// Temporal icon
+};
 
 const Modal = ({ dish, closeModal }) => {
   return (
     <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg p-6 relative max-w-sm w-full mx-4 overflow-auto max-h-screen">
+      <div className="bg-white rounded-lg p-4 relative w-full max-w-md mx-4">
         <button
           onClick={closeModal}
-          className="absolute top-2 right-2 text-gray-700 hover:text-gray-900 text-4xl"
+          className="absolute top-2 right-2 text-gray-700 hover:text-gray-900 text-3xl"
         >
           &times;
         </button>
-        <h2 className="text-2xl font-bold mb-4">{dish.title}</h2>
-        <img src={dish.url} alt={dish.title} className="w-full h-auto mb-4 rounded" />
-        <p className="mb-4">{dish.description}</p>
-      
-        <ul className="list-disc list-inside">
+        <h2 className="text-xl font-bold mb-2">{dish.title}</h2>
+        <div className="flex justify-center mb-2">
+          <img src={dish.url} alt={dish.title} className="w-30 h-30 object-cover rounded" />
+        </div>
+        <p className="mb-2">{dish.description}</p>
+        <ul className="list-disc list-inside mb-2">
           {dish.ingredients.map((ingredient, index) => (
             <li key={index}>{ingredient}</li>
           ))}
         </ul>
+        <div className="allergens">
+          <h3 className="text-lg font-bold mb-1">Alérgenos</h3>
+          <ul className="list-none flex flex-wrap gap-2">
+            {dish.allergens.map((allergen, index) => (
+              <li key={index} className="flex items-center gap-1 bg-gray-200 px-2 py-1 rounded">
+                {allergenIcons[allergen.trim().toLowerCase()] && (
+                  <span className="text-lg">{allergenIcons[allergen.trim().toLowerCase()]}</span>
+                )}
+                <span className="text-sm hidden">{allergen}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

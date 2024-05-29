@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Pagination from '../Pagination/Pagination';
-import './Grid.css';
 import Modal from '../Modal/Modal';
 
 const Grid = () => {
@@ -20,6 +19,7 @@ const Grid = () => {
             title: item.title,
             description: item.description,
             ingredients: item.ingredients || [],
+            allergens: item.allergens ? item.allergens.split(',') : [],  // Convertir la cadena de alérgenos en un array
             id: item._id || item.id
           }));
           setImages(processedData);
@@ -50,11 +50,10 @@ const Grid = () => {
 
   return (
     <section className="container mx-auto px-4">
-      <div className='section-AboutUs-div1 text-center'>
-        <h2>Nuestros <span className='title-2-word'>Platos</span></h2>
+      <div className='text-center'>
+        <h2>Nuestros <span className='font-bold'>Platos</span></h2>
       </div>
-      <hr className='hr1'/>
-      <hr className='hr2'/>
+      <hr className='my-2'/>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
         {currentImages.map((menu) => (
           <div 
