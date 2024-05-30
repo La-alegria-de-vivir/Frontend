@@ -1,23 +1,24 @@
 import React from 'react';
-import { FaFish, FaEgg, FaCheese, FaWineGlassAlt } from 'react-icons/fa';
-import { GiWheat, GiPeanut, GiSadCrab, GiAlmond } from 'react-icons/gi';
+import { FaFish, FaEgg, FaWineGlassAlt } from 'react-icons/fa';
+import { GiWheat, GiPeanut, GiSadCrab, GiAlmond, GiSesame, GiHerbsBundle, GiBrandyBottle, GiJellyBeans ,GiShrimp} from 'react-icons/gi';
 import { LuMilk} from 'react-icons/lu';
+import { PiBeerBottleFill } from "react-icons/pi";
 
 const allergenIcons = {
   gluten: <GiWheat />,
-  crustaceos: <GiSadCrab />,
+  marisco: <GiShrimp />,
   huevos: <FaEgg />,
   pescado: <FaFish />,
   cacahuetes: <GiPeanut />,
-  soja: <FaCheese />, 
+  soja: <GiBrandyBottle />,
   lácteos: <LuMilk />,
   frutos: <GiAlmond />,
-  apio: <FaFish />, 
-  mostaza: <FaCheese />, 
-  sésamo: <GiWheat />, 
+  apio: <GiHerbsBundle />,
+  mostaza: <PiBeerBottleFill />, 
+  sésamo: <GiSesame />,
   sulfitos: <FaWineGlassAlt />,
-  altramuces: <FaCheese />, 
-  moluscos: <FaFish />,
+  altramuces: <GiJellyBeans />, 
+  moluscos: <GiSadCrab />,
   consultar: "Consultar con cocina"
 };
 
