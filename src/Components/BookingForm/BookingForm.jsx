@@ -21,13 +21,9 @@ const BookingForm = () => {
                 setShowModal(true);
             } else {
                 const data = await response.json();
-                if (data.message === 'Se ha superado el número máximo de comensales en este período de dos horas. Las reservas en las próximas dos horas han sido bloqueadas.') {
+                if (data.message === 'Se ha superado el número máximo de comensales para ese horario. Consulte con el restaurante.') {
                     setShowAlert(true);
-                } else if (data.message === 'Se ha alcanzado el límite de 24 comensales permitidos para esta hora en la Terraza. No se puede realizar la reserva.') {
-                    setShowAlert(true);   
-                } else if (data.message === 'Se ha alcanzado el límite de 28 comensales permitidos para esta hora en la Sala. No se puede realizar la reserva.') {
-                    setShowAlert(true);    
-                } else {
+                    } else {
                     throw new Error('Error al crear reserva');
                 }
             }
