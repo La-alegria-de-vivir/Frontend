@@ -25,6 +25,8 @@ const BookingForm = () => {
                     setShowAlert(true);
                 } else if (data.message === 'Se ha alcanzado el límite de 24 comensales permitidos para esta hora en la Terraza. No se puede realizar la reserva.') {
                     setShowAlert(true);   
+                } else if (data.message === 'Se ha alcanzado el límite de 28 comensales permitidos para esta hora en la Sala. No se puede realizar la reserva.') {
+                    setShowAlert(true);    
                 } else {
                     throw new Error('Error al crear reserva');
                 }
