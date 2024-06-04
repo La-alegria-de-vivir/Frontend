@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Pagination from '../Pagination/Pagination';
 import Modal from '../Modal/Modal';
+import './Grid.css';
 
 const Grid = () => {
   const [images, setImages] = useState([]);
@@ -50,10 +51,11 @@ const Grid = () => {
 
   return (
     <section className="container mx-auto px-4">
-      <div className='text-center'>
-        <h2>Nuestros <span className='font-bold'>Platos</span></h2>
+      <div className='section-AboutUs-div1'>
+        <h2>Nuestros <span className='title-2-word'>Platos</span></h2>
       </div>
-      <hr className='my-2'/>
+      <hr className='hr1'/>
+      <hr className='hr2' style={{marginBottom:"2rem"}}/>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
         {currentImages.map((menu) => (
           <div 
