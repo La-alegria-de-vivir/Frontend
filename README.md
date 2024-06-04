@@ -1,7 +1,8 @@
-# Front clientes La alegría d evivir
+# Front clientes La alegría de vivir
 
 Proyecto innovador del restaurante **Alegría de vivir**, enfocado en realizar un front para los usuarios del restaurante. Se puede ver una singlepage con una concordancia de colores en relación al logotipo del restaurante. Teniendo en cuenta algunos colores del cuadro ```La alegría de vivir```.
 
+![La alegría de vivir](https://firebasestorage.googleapis.com/v0/b/alegria-de-vivir-99.appspot.com/o/screenshot-develop--alegriadevivir99.netlify.app-2024.06.png?alt=media&token=05b0a181-e179-4bac-af06-ba4ef66af2d8)
 
 ## Tabla de Contenidos
 
@@ -33,6 +34,7 @@ Teniendo en cuenta la anterior información se podría navegar por todas las pá
 - Maria del Mar [Linkedin](https://www.linkedin.com/in/mar-prieto-garcia/)
 - Amanda [Linkedin](https://www.linkedin.com/in/amandarguez/)
 - Mamen [Linkedin](https://www.linkedin.com/in/mamen-fb/)
+- Roxana [Linkedin](https://www.linkedin.com/in/roxana-pj/)
 
 
 
@@ -51,7 +53,7 @@ Teniendo en cuenta la anterior información se podría navegar por todas las pá
 - <a href="https://trello.com/b/1zffZTwq/la-alegria-de-vivir-99"> Trello </a> </br> 
 - <a href="https://www.figma.com/design/sBDQzDm1xWfEMxqOks7MAB/La-alegr%C3%ADa-de-vivir-99%C2%BA?node-id=0%3A1&t=0l2iHBw9IKDFn3CL-1"> Figma </a> </br>
 - <a href="https://github.com/La-alegria-de-vivir">GitHub</a> </br>
-- <a href="#">Deploy</a>
+- <a href="https://develop--alegriadevivir99.netlify.app/">Deploy</a>
 
 ## Licencia
 
@@ -61,17 +63,9 @@ Las fuentes utilizadas en este proyecto estan sujetas a licencia SIL con Copyrig
 
 ## Test 
 
-Se han hecho varios test para el frontend para .
-![imagen del test de backend](#)
+Se han hecho varios test para el frontend 
+![Enlace a los test](#)
 
 ## Auditoria de la página
-Documento drive <a href="https://drive.google.com/file/d/1j24be0_l-XN2DgNLuEJHKNor_WGTlaqV/view?usp=sharing">Auditoria</a>
+Documento drive <a href="https://docs.google.com/document/d/1dfvTb3-JDw_2UjeZa-ZX3zlMycbjh4IaEKLOINpZcXM/edit?usp=sharing">Auditoria</a>
 
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
