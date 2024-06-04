@@ -23,6 +23,8 @@ const BookingForm = () => {
                 const data = await response.json();
                 if (data.message === 'Se ha superado el número máximo de comensales en este período de dos horas. Las reservas en las próximas dos horas han sido bloqueadas.') {
                     setShowAlert(true);
+                } else if (data.message === 'Se ha alcanzado el límite de 24 comensales permitidos para esta hora en la Terraza. No se puede realizar la reserva.') {
+                    setShowAlert(true);   
                 } else {
                     throw new Error('Error al crear reserva');
                 }
