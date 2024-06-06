@@ -18,23 +18,23 @@ describe("Menu Component", () => {
   
     it("Should display the menu items correctly", () => {
       const menuData = [
-        { title: "TORTILLITA DE CAMARÓN DE LA BAHIA DE CADIZ", price: "27.6" },
-        { title: "TOMATE CONFITADO CON BONITO EN ESCABECHE", price: "15" },
+        { title: "TOMATE CONFITADO CON BONITO EN ESCABECHE", price: "11" },
+        { title: "TORTILLITA DE CAMARÓN DE LA BAHÍA DE CÁDIZ", price: "3" },
         { title: "ENSALADILLA RUSA CON CEBOLLA ENCURTIDA", price: "12" },
-        { title: "ENSALADA DE TEMPORADA", price: "16.75" },
-        { title: "BOQUERONES EN VINAGRE DE VERMUT", price: "16" },
+        { title: "ENSALADA DE TEMPORADA", price: "14" },
+        { title: "SALMOREJO ASADO", price: "6.5" },
         { title: "ANCHOAS DEL CANTÁBRICO", price: "18" },
+        { title: "BOQUERONES EN VINAGRE DE VERMUT", price: "16" },
         { title: "MOJAMA DE ATÚN CON ALMENDRAS FRITAS", price: "18" },
         { title: "PANCETA CRUJIENTE A BAJA TEMPERATURA", price: "16" },
-        { title: "MILHOJAS DE MOUSSE DE FOIE QUESO DE CABRA Y MANZANA ASADA", price: "9" },
+        { title: "MILHOJAS DE MOUSSE DE FOIE, QUESO DE CABRA Y MANZANA ASADA", price: "9.5" },
         { title: "HAMBURGUESA ANGUS", price: "15" },
-        { title: "CROQUETAS CASERAS", price: "10" },
-        { title: "TABLA DE GRANDES QUESOS", price: "16" },
-        { title: "LOMO DE TERNERA 54º CON SALSA DE OLOROSO Y PATATAS", price: "22" },
-        { title: "TACO DE BACALAO", price: "12" },
-        { title: "TIRAMISU", price: "8.5" },
-        { title: "SALMOREJO ASADO", price: "9.5" },
-        { title: "TARTA DE QUESO", price: "7.5" },                
+        { title: "CROQUETAS CASERAS", price: "10.5" },
+        { title: "TABLA DE GRANDES QUESOS", price: "16.5" },
+        { title: "LOMO DE TERNERA 54º CON SALSA DE OLOROSO Y PATATAS", price: "24.5" },
+        { title: "TACO DE BACALAO", price: "16" },
+        { title: "TIRAMISÚ", price: "6.5" },
+        { title: "TARTA DE QUESO", price: "7" },                
       ];
   
       menuData.forEach((item, index) => {
