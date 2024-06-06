@@ -58,7 +58,7 @@ function Navbar() {
               <li><Link className="hover:text-[#BBBC4E]" to="/reservation">Reserva</Link></li>
               <li><a className="hover:text-[#BBBC4E]" href="/#AboutUs">Nuestra cocina</a></li>
               <li><a className="hover:text-[#BBBC4E]" href="/#Contacto">Contacto</a></li>
-              <li><Link className="hover:text-[#BBBC4E]" to="/Grupos">Grupos</Link></li>
+              <li><Link className="hover:text-[#BBBC4E]" to="/grupos">Grupos</Link></li>
           </ul>
           <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
           <li><a className="hover:text-[#BBBC4E]" href="/">Inicio</a></li>
@@ -66,7 +66,7 @@ function Navbar() {
               <li><Link className="hover:text-[#BBBC4E]" to="/reservation">Reserva</Link></li>
               <li><a className="hover:text-[#BBBC4E]" href="/#AboutUs">Nuestra cocina</a></li>
               <li><a className="hover:text-[#BBBC4E]" href="/#Contacto">Contacto</a></li>
-              <li><Link className="hover:text-[#BBBC4E]" to="/Grupos">Grupos</Link></li>
+              <li><Link className="hover:text-[#BBBC4E]" to="/grupos">Grupos</Link></li>
 
           </ul>
         </nav>
