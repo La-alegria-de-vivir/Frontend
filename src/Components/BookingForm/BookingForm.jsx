@@ -21,9 +21,13 @@ const BookingForm = () => {
                 setShowModal(true);
             } else {
                 const data = await response.json();
-                if (data.message === 'Se ha superado el número máximo de comensales para ese horario. Consulte con el restaurante.') {
+                if (data.message === 'Se ha superado el número máximo de comensales en este período de dos horas. Las reservas en las próximas dos horas han sido bloqueadas.') {
                     setShowAlert(true);
-                    } else {
+                } else if (data.message === 'Se ha alcanzado el límite de 24 comensales permitidos para esta hora en la Terraza. No se puede realizar la reserva.') {
+                    setShowAlert(true);   
+                } else if (data.message === 'Se ha alcanzado el límite de 28 comensales permitidos para esta hora en la Sala. No se puede realizar la reserva.') {
+                    setShowAlert(true);       
+                } else {
                     throw new Error('Error al crear reserva');
                 }
             }
@@ -64,7 +68,7 @@ const BookingForm = () => {
                 <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 mt-0 lg:mt-0 xl:mt-0 text-center" style={{ marginTop: '6rem' }}>Hacer <span className='text-[#BBBC4E]'>Reservas</span></h2>
                 {showAlert && (
                     <div className="bg-red-200 text-red-800 p-3 rounded-md mb-4">
-                        Se ha superado el número máximo de comensales en este período de dos horas. Las reservas en las próximas dos horas han sido bloqueadas.
+                        Se ha superado el número máximo de comensales para ese horario. Contacte con nosotros.
                     </div>
                 )}
                 <div className="flex justify-center mt-8">
