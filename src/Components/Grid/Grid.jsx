@@ -20,7 +20,7 @@ const Grid = () => {
             title: item.title,
             description: item.description,
             ingredients: item.ingredients || [],
-            allergens: item.allergens ? item.allergens.split(',') : [],  // Convertir la cadena de alérgenos en un array
+            allergens: item.allergens ? item.allergens.split(',') : [], 
             id: item._id || item.id
           }));
           setImages(processedData);

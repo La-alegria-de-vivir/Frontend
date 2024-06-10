@@ -30,7 +30,7 @@
 }
 .modal-image {
   max-width: 100%;
-  max-height: 300px; /* Ajusta esta altura para hacer la imagen más grande */
-  object-fit: cover; /* Esto asegura que la imagen se ajuste bien dentro del contenedor */
+  max-height: 300px; 
+  object-fit: cover; 
 }
 
