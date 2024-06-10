@@ -34,7 +34,7 @@ const Modal = ({ dish, closeModal }) => {
         </button>
         <h2 className="text-lg font-bold mb-2 text-center">{dish.title}</h2>
         <div className="flex justify-center mb-2">
-          <img src={dish.url} alt={dish.title} className="w-25 h-25 object-cover rounded" />
+          <img src={dish.url} alt={dish.title} className="modal-image object-cover rounded" />
         </div>
         <p className="mb-2 text-sm text-center">{dish.description}</p>
         <ul className="list-disc list-inside mb-2 text-sm">

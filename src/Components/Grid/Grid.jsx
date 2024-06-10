@@ -58,19 +58,23 @@ const Grid = () => {
       <hr className='hr2' style={{marginBottom:"2rem"}}/>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
         {currentImages.map((menu) => (
+         
           <div 
-            key={menu.id} 
-            className="relative max-w-sm rounded overflow-hidden shadow-lg mx-auto cursor-pointer transform transition-transform hover:scale-105"
-            onClick={() => openModal(menu)}
-          >
-            <img src={menu.url} alt={menu.title} className="w-full opacity-90 hover:opacity-100 transition-opacity" />
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-              <span className="text-white text-lg">Ver más</span>
+              key={menu.id} 
+              className="relative max-w-sm rounded overflow-hidden shadow-lg mx-auto cursor-pointer transform transition-transform hover:scale-105"
+              onClick={() => openModal(menu)}
+            >
+              <div className="image-container">
+                <img src={menu.url} alt={menu.title} className="opacity-90 hover:opacity-100 transition-opacity" />
+              </div>
+              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <span className="text-white text-lg">Ver más</span>
+              </div>
+              <div className="px-6 py-4">
+                <p className="text-gray-700 text-base">{menu.title}</p>
+              </div>
             </div>
-            <div className="px-6 py-4">
-              <p className="text-gray-700 text-base">{menu.title}</p>
-            </div>
-          </div>
+
         ))}
       </div>
       <Pagination 
