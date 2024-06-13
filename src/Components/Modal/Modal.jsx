@@ -36,7 +36,7 @@ const Modal = ({ dish, closeModal }) => {
         <div className="flex justify-center mb-2">
           <img src={dish.url} alt={dish.title} className="modal-image object-cover rounded" />
         </div>
-        <p className="mb-2 text-sm text-center">{dish.description}</p>
+        <p className="mb-2 text-sm text-center" dangerouslySetInnerHTML={{ __html: dish.description }}></p>
         <ul className="list-disc list-inside mb-2 text-sm">
           {dish.ingredients.map((ingredient, index) => (
             <li key={index}>{ingredient}</li>
